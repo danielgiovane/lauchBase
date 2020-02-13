@@ -1,0 +1,41 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+  <div class="wrapper">
+    <h1>Aulas</h1>
+  </div>
+
+  <section class="cards">
+
+    {% for item in itens %}
+
+      <div class="card" id="{{item.id}}">
+        <div class="card_image">
+          <img src="./img/francisco-gonzalez-583855-unsplash-360x280.jpg" alt="Imagem de {{item.titulo}}">
+        </div>
+        <div class="card_content">
+          <p>{{item.titulo}}</p>
+        </div>
+        <div class="card_info">
+          <p>{{item.rede}}</p>
+          <p class="card_link">
+            {{item.link}}
+          </p>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </section>
+
+
+  <script src="/index.js"></script>
+
+
+{% endblock %}
